@@ -16,7 +16,7 @@ import juego.util.Direccion;
 /**
  * Nombre de la clase pública: ArbitroReversi.
  * 
- * @author Angel Martinez.
+ * @author Angel Martinez Barrio.
  * @since 1.0
  * 
  */
