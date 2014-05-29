@@ -70,3 +70,4 @@ public class ArbitroReversi {
 		//Que comience por el turno de las piezas de color negro
 		turno = Color.NEGRO;
 	}
+}
