@@ -35,4 +35,13 @@ public enum Color {
 	private Color(char c) {
 		caracter = c;
 	}
+	
+	/**
+	 * Método que retorna un carácter.
+	 * 
+	 * @return carácter carácter.
+	 */
+	public char toChar() {
+		return caracter;
+	}
 }

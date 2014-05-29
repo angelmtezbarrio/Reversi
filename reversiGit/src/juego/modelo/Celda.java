@@ -36,4 +36,23 @@ public class Celda {
 		this.fila = fila;
 		this.columna = columna;
 	}
+	
+	/**
+	 * Método que nos dice la pieza.
+	 * 
+	 * @return pieza.
+	 */
+	public Pieza obtenerPieza() {
+		return this.pieza;
+	}
+
+	/**
+	 * Método que establece la pieza.
+	 * 
+	 * @param pieza
+	 *            que queremos establecer
+	 */
+	public void establecerPieza(Pieza pieza) {
+		this.pieza = pieza;
+	}
 }

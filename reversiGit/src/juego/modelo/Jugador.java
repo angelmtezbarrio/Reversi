@@ -33,4 +33,13 @@ public class Jugador {
 		this.nombre = nombre;
 		this.color = color;
 	}
+	
+	/**
+	 * Método que obtiene el color.
+	 * 
+	 * @return atributo color propio de la clase.
+	 */
+	public Color obtenerColor() {
+		return this.color;
+	}
 }
