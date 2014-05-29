@@ -109,5 +109,5 @@ public class Reversi {
 		// significa que la partida ha acabado
 		mostrarGanador(arbitro.consultarGanador());
 	}
+	
 }
-
