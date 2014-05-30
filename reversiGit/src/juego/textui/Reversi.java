@@ -171,4 +171,42 @@ public class Reversi {
 		System.out.println("");
 	}
 	
+	/**
+	 * @author angelillo
+	 * Método que dice a qué jugador le toca mover, mostrando su nombre, y el
+	 * color de sus fichas.
+	 */
+	private static void mostrarTurno() {
+		System.out.println("El turno es de: "
+				+ arbitro.consultarTurno().consultarNombre() + " con fichas "
+				+ arbitro.consultarTurno().obtenerColor().toChar()
+				+ " de color " + arbitro.consultarTurno().obtenerColor());
+	}
+
+	/**
+	 * Método que mustra un mensaje en pantalla pidiendo la fila y guardando su
+	 * valor convirtiéndolo a entero.
+	 * @author angelillo
+	 * @return coordenada fila del tablero.
+	 */
+	private static int pedirFila() {
+
+		String cadenaFila = "";
+		int fila = 0;
+		System.out.print("Introduce Fila: ");
+
+		// Leo del teclado la fila
+		InputStreamReader in = new InputStreamReader(System.in);
+		BufferedReader teclado = new BufferedReader(in);
+
+		try {
+			cadenaFila = teclado.readLine();
+			fila = Integer.parseInt(cadenaFila);
+		} catch (IOException e) { // En caso de haber un error de lectura del
+									// buffer (desde el teclado).
+		}
+
+		return fila;
+
+	}
 }
