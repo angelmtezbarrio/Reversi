@@ -110,4 +110,65 @@ public class Reversi {
 		mostrarGanador(arbitro.consultarGanador());
 	}
 	
+	/**
+	 * Método que muestra un mensaje en pantalla en caso de que el número de
+	 * filas y columnas introducido no coincida con lo establecido en las
+	 * indicaciones de la práctica.
+	 */
+	private static void mostrarMensajeAyudaTablero() {
+		System.out
+				.println("El número de Filas y Columnas del tablero debe ser superior o igual a 4 y debe ser un número par.");
+	}
+
+	/**
+	 * Método que muestra un mensaje en pantalla en caso de que el número de
+	 * argumentos introducidos no sea correcto, indicando cómo debe ser la
+	 * entrada de argumentos.
+	 */
+	private static void mostrarMensajeAyudaArgumentos() {
+		System.out
+				.println("El número de argumentos introducido no es correcto.");
+		System.out
+				.println("Debes introducir dos nombres de jugadores y dos números: filas y columnas.");
+	}
+
+	/**
+	 * Método que muestra un mensaje en pantalla que nos indica que el
+	 * movimiento a realizar no está permitido por no cambiar ninguna ficha de
+	 * color.
+	 */
+	private static void mostrarMensajeCoordenadas() {
+		System.out
+				.println("Movimiento no permitido; no cambia ninguna ficha de color.");
+	}
+
+	/**
+	 * Método que muestra el tablero.
+	 */
+	private static void mostrarTablero() {
+		for (int i = 0; i < arbitro.consultarTablero().obtenerNumeroFilas(); i++) {
+
+			// Muestro el número de filas en la parte izquierda del tablero
+			System.out.print(i + "\t");
+
+			// Muestra el contenido de las celdas bien estén vacías ('-') o bien
+			// tengan pieza ('X', 'O')
+			for (int j = 0; j < arbitro.consultarTablero()
+					.obtenerNumeroColumnas(); j++) {
+				System.out.print(arbitro.consultarTablero().obtenerCelda(i, j)
+						.toString());
+			}
+			System.out.println("");
+		}
+		System.out.println("");
+		System.out.print("\t");
+
+		// Muestra el número de columnas en la parte inferior del tablero
+		for (int k = 0; k < arbitro.consultarTablero().obtenerNumeroColumnas(); k++) {
+			System.out.print(k);
+		}
+
+		System.out.println("");
+	}
+	
 }
