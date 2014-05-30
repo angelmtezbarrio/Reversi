@@ -8,7 +8,7 @@ package juego.util;
  * 
  * @author Rub�n Blanco Alc�ntara.
  * @since 1.0
- * 
+ * Cambio realizado
  */
 public enum Direccion {
 	/**
