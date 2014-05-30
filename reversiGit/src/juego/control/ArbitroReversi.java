@@ -14,7 +14,7 @@ import juego.modelo.Tablero;
 import juego.util.Direccion;
 
 /**
- * Nombre de la clase pública: ArbitroReversi.
+ * Nombre de la clase pï¿½blica: ArbitroReversi.
  * 
  * @author Angel Martinez Barrio.
  * @since 1.0
@@ -43,7 +43,7 @@ public class ArbitroReversi {
 	 * Constructor que crea el objeto tablero.
 	 * 
 	 * @param tablero
-	 *            Se le pasa un parámetro tablero y se le asigna al objeto
+	 *            Se le pasa un parï¿½metro tablero y se le asigna al objeto
 	 *            this.tablero.
 	 */
 	public ArbitroReversi(Tablero tablero) {
@@ -69,5 +69,37 @@ public class ArbitroReversi {
 
 		//Que comience por el turno de las piezas de color negro
 		turno = Color.NEGRO;
+	}
+}
+
+/**
+ * Mï¿½todo registrarJugador al que se le pasa un parï¿½metro nombre de tipo
+ * String y asocia el jugador a un color.
+ * 
+ * @param nombre
+ *            Nombre del jugador a registrar.
+ */
+public void registrarJugador(String nombre) {
+	// Si j1 == null le crea, si estï¿½ creado comprueba que j2 ==
+	// null y lo crea sin necesidad de comprobar que j1 == null
+	if (jug1 == null) {
+		jug1 = new Jugador(nombre, Color.NEGRO);
+	} else if (jug2 == null) {
+		jug2 = new Jugador(nombre, Color.BLANCO);
+	}
+}
+
+/**
+ * Mï¿½todo consultarTurno. Retorna el jugador cuyo color coincide con el color
+ * del turno.
+ * 
+ * @return jug1 en caso de que el color asociado coincida con el color
+ *         pasado por parï¿½metro, jug2 en caso contrario.
+ */
+public Jugador consultarTurno() {
+	if (jug1.obtenerColor() == turno) {
+		return jug1;
+	} else {
+		return jug2;
 	}
 }
