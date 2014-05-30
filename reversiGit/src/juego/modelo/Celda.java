@@ -38,7 +38,7 @@ public class Celda {
 	}
 	
 	/**
-	 * Método que nos dice la pieza.
+	 * Método que nos dice la pieza que usamos.
 	 * 
 	 * @return pieza.
 	 */
