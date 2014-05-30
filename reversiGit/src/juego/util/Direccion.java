@@ -48,6 +48,7 @@ public class Direccion {
 		 *            desplazamiento de la fila.
 		 * @param desplColumna
 		 *            desplazamiento de la columna.
+		 *            @autor angel
 		 */
 		private Direccion(int desplFila, int desplColumna) {
 			this.desplazamientoFila = desplFila;
