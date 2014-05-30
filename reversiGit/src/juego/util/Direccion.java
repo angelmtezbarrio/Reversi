@@ -8,10 +8,8 @@ public class Direccion {
 
 	/**
 	 * Clase de tipo enumerado: Direccion.
-	 * 
-	 * 
+	 * @Ruben
 	 * @since 1.1
-	 * 
 	 */
 	public enum Direccion {
 		/**
