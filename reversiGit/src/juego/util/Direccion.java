@@ -6,25 +6,25 @@ package juego.util;
 /**
  * Clase de tipo enumerado: Direccion.
  * 
- * @author Rubén Blanco Alcántara.
+ * @author Rubï¿½n Blanco Alcï¿½ntara.
  * @since 1.0
  * 
  */
 public enum Direccion {
 	/**
-	 * Tipo enumerado dirección HORIZONTAL.
+	 * Tipo enumerado direcciï¿½n HORIZONTAL.
 	 */
 	HORIZONTAL(0, 1),
 	/**
-	 * Tipo enumerado dirección VERTICAL.
+	 * Tipo enumerado direcciï¿½n VERTICAL.
 	 */
 	VERTICAL(1, 0),
 	/**
-	 * Tipo enumerado dirección DIAGONAL_SO_NE.
+	 * Tipo enumerado direcciï¿½n DIAGONAL_SO_NE.
 	 */
 	DIAGONAL_SO_NE(1, -1),
 	/**
-	 * Tipo enumerado dirección DIAGONAL_NO_SE.
+	 * Tipo enumerado direcciï¿½n DIAGONAL_NO_SE.
 	 */
 	DIAGONAL_NO_SE(1, 1);
 
@@ -38,5 +38,15 @@ public enum Direccion {
 	 */
 	private int desplazamientoColumna;
 
-	
+	/**
+	 * Constructor que crea los objetos desplFila y desplColumna.
+	 * 
+	 * @param desplFila desplazamiento de la fila.
+	 * @param desplColumnadesplazamiento de la columna.
+	 * @autor angel
+	 */
+	private Direccion(int desplFila, int desplColumna) {
+		this.desplazamientoFila = desplFila;
+		this.desplazamientoColumna = desplColumna;
+	}
 }
