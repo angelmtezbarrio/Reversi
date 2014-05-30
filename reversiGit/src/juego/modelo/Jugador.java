@@ -1,13 +1,18 @@
 /**
  * Paquete modelo.
  */
-package juego.modelo;
+package modelo;
+
+import modelo.Color;
+import modelo.Pieza;
 
 /**
- * Nombre de la clase pública: Jugador.
+ * Nombre de la clase pï¿½blica: Jugador.
  * 
  * @author Carolina Colina Zamorano.
+ * @author SteBnoOni - RubÃ©n Blanco AlcÃ¡ntara (revision)
  * @since 1.0
+ * @version Final
  * 
  */
 public class Jugador {
@@ -33,13 +38,41 @@ public class Jugador {
 		this.nombre = nombre;
 		this.color = color;
 	}
-	
+
 	/**
-	 * Método que obtiene el color.
+	 * Mï¿½todo que obtiene el color.
 	 * 
 	 * @return atributo color propio de la clase.
 	 */
 	public Color obtenerColor() {
 		return this.color;
 	}
+
+	/**
+	 * Mï¿½todo que consulta el nombre del jugador.
+	 * 
+	 * @return atributo nombre propio de la clase.
+	 */
+	public String consultarNombre() {
+		return this.nombre;
+	}
+
+	/**
+	 * Mï¿½todo que genera una pieza de un color.
+	 * 
+	 * @return pieza genera una pieza.
+	 */
+	public Pieza generarPieza() {
+		return new Pieza(color);
+	}
+
+	/**
+	 * Mï¿½todo que retorna una cadena con el nombre del jugador y el color al que
+	 * estï¿½ asociado.
+	 */
+	public String toString() {
+		String cadena = this.nombre + " - " + this.color.toChar();
+		return cadena;
+	}
+
 }
