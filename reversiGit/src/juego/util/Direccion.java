@@ -49,4 +49,21 @@ public enum Direccion {
 		this.desplazamientoFila = desplFila;
 		this.desplazamientoColumna = desplColumna;
 	}
+	/**
+	 * Método que obtiene el desplazamiento de la fila.
+	 * 
+	 * @return el desplazamiento de la fila.
+	 */
+	public int obtenerDesplazamientoFila() {
+		return desplazamientoFila;
+	}
+
+	/**
+	 * Método que obtiene el desplazamiento de la columna.
+	 * 
+	 * @return desplazamiento de la columna.
+	 */
+	public int obtenerDesplazamientoColumna() {
+		return desplazamientoColumna;
+	}
 }
