@@ -1,9 +1,9 @@
 /**
  * Paquete modelo
  */
-package modelo;
+package juego.modelo;
 
-import modelo.Pieza;
+import juego.modelo.Pieza;
 
 /**
  * Clase p�blica: Celda.

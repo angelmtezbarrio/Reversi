@@ -1,10 +1,10 @@
 /**
  * Paquete modelo.
  */
-package modelo;
+package juego.modelo;
 
-import modelo.Color;
-import modelo.Pieza;
+import juego.modelo.Color;
+import juego.modelo.Pieza;
 
 /**
  * Nombre de la clase p�blica: Jugador.
