@@ -70,36 +70,103 @@ public class ArbitroReversi {
 		//Que comience por el turno de las piezas de color negro
 		turno = Color.NEGRO;
 	}
-}
 
-/**
- * Mï¿½todo registrarJugador al que se le pasa un parï¿½metro nombre de tipo
- * String y asocia el jugador a un color.
- * 
- * @param nombre
- *            Nombre del jugador a registrar.
- */
-public void registrarJugador(String nombre) {
-	// Si j1 == null le crea, si estï¿½ creado comprueba que j2 ==
-	// null y lo crea sin necesidad de comprobar que j1 == null
-	if (jug1 == null) {
-		jug1 = new Jugador(nombre, Color.NEGRO);
-	} else if (jug2 == null) {
-		jug2 = new Jugador(nombre, Color.BLANCO);
+
+	/**
+	 * Mï¿½todo registrarJugador al que se le pasa un parï¿½metro nombre de tipo
+	 * String y asocia el jugador a un color.
+	 * 
+	 * @param nombre
+	 *            Nombre del jugador a registrar.
+	 */
+	public void registrarJugador(String nombre) {
+		// Si j1 == null le crea, si estï¿½ creado comprueba que j2 ==
+		// null y lo crea sin necesidad de comprobar que j1 == null
+		if (jug1 == null) {
+			jug1 = new Jugador(nombre, Color.NEGRO);
+		} else if (jug2 == null) {
+			jug2 = new Jugador(nombre, Color.BLANCO);
+		}
 	}
-}
 
-/**
- * Mï¿½todo consultarTurno. Retorna el jugador cuyo color coincide con el color
- * del turno.
- * 
- * @return jug1 en caso de que el color asociado coincida con el color
- *         pasado por parï¿½metro, jug2 en caso contrario.
- */
-public Jugador consultarTurno() {
-	if (jug1.obtenerColor() == turno) {
-		return jug1;
-	} else {
-		return jug2;
+	/**
+	 * Mï¿½todo consultarTurno. Retorna el jugador cuyo color coincide con el color
+	 * del turno.
+	 * 
+	 * @return jug1 en caso de que el color asociado coincida con el color
+	 *         pasado por parï¿½metro, jug2 en caso contrario.
+	 */
+	public Jugador consultarTurno() {
+		if (jug1.obtenerColor() == turno) {
+			return jug1;
+		} else {
+			return jug2;
+		}
+	}
+	public Jugador consultarGanador() {
+		if (estaAcabado()) {
+			// SI LAS PIEZAS DE CADA COLOR SON IGUALES: return null
+			if (tablero.obtenerNumeroPiezas(Color.BLANCO) == tablero
+					.obtenerNumeroPiezas(Color.NEGRO)) {
+				return null;
+			}
+			// SI CONTAR PIEZAS NEGRAS > CONTAR PIEZAS BLANCAS : return jug1
+			else if (tablero.obtenerNumeroPiezas(Color.BLANCO) > tablero
+					.obtenerNumeroPiezas(Color.NEGRO)) {
+				return jug2;
+			}
+			// SI CONTAR PIEZAS NEGRAS < CONTAR PIEZAS BLANCAS : return jug2
+			else {
+				return jug1;
+			}
+		} else {
+			// SI NO SE HA ACABADO LA PARTIDA: return null
+			return null;
+		}
+	
+	}
+	
+	/**
+	 * Método que coloca la pieza del color del turno actual en la celda dada
+	 * por coordenadas (fila y columnas) Cambia el color de las piezas
+	 * comprobando todas las direcciones Comprueba si ha terminado la partida,
+	 * sino es así, comprueba que el jugador actual pueda mover, en ese caso
+	 * salta el turno.
+	 * 
+	 * @param x
+	 *            coordenada de la fila donde esta la posicion de la pieza.
+	 * @param y
+	 *            coordenada de la columna donde esta la posicion de la pieza.
+	 */
+	
+	public void jugar(int x, int y) {
+		Celda celdaAux = tablero.obtenerCelda(x, y);
+		// COLOCAR LA PIEZA DEL TURNO ACTUAL EN celdaAux
+		colocar(celdaAux, turno);
+	
+		// BUCLE FOR-EACH, PARA RECOGER TODOS LOS TIPOS DE DIRECCIONES
+		for (Dirección direccion : Dirección.values()) {
+			// SENTIDO ASCENDENTE
+			int piezas = tablero.contarPiezas(celdaAux, direccion, turno, true);
+			if (piezas > 0)
+				sustituirPiezas(celdaAux, direccion, piezas, true);
+			// SENTIDO DESCENDENTE
+			piezas = tablero.contarPiezas(celdaAux, direccion, turno, false);
+			if (piezas > 0)
+				sustituirPiezas(celdaAux, direccion, piezas, false);
+		}
+	
+		// COMPROBAR SI HA TERMINADO LA PARTIDA: salgo
+		if (!estaAcabado()) {
+			if (turno == Color.BLANCO) {
+				if (puedeMover(Color.NEGRO)) {
+					turno = Color.NEGRO;
+				}
+			} else {
+				if (puedeMover(Color.BLANCO)) {
+					turno = Color.BLANCO;
+				}
+			}
+		}
 	}
 }
