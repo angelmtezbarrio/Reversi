@@ -1,11 +1,17 @@
+/**
+ * Paquete modelo
+ */
+package modelo;
 
-package juego.modelo;
+import modelo.Pieza;
 
 /**
- * Clase pública: Celda.
+ * Clase pï¿½blica: Celda.
  * 
  * @author Carolina Colina Colina Zamorano.
+ * @author SteBnoOni - RubÃ©n Blanco AlcÃ¡ntara (revision)
  * @since 1.0
+ * @version Final
  * 
  */
 public class Celda {
@@ -27,7 +33,7 @@ public class Celda {
 	 * Constructor de la clase que crea los objetos fila y columna.
 	 * 
 	 * @param fila
-	 *            donde está la celda
+	 *            donde estï¿½ la celda
 	 * @param columna
 	 *            donde esta la celda
 	 * 
@@ -36,9 +42,9 @@ public class Celda {
 		this.fila = fila;
 		this.columna = columna;
 	}
-	
+
 	/**
-	 * Método que nos dice la pieza que usamos.
+	 * Mï¿½todo que nos dice la pieza.
 	 * 
 	 * @return pieza.
 	 */
@@ -47,12 +53,54 @@ public class Celda {
 	}
 
 	/**
-	 * Método que establece la pieza.
+	 * Mï¿½todo que establece la pieza.
 	 * 
 	 * @param pieza
 	 *            que queremos establecer
 	 */
 	public void establecerPieza(Pieza pieza) {
 		this.pieza = pieza;
+	}
+
+	/**
+	 * Mï¿½todo que nos dice si la pieza estï¿½ vacia.
+	 * 
+	 * @return si estï¿½ vacï¿½a, false en caso contrario.
+	 */
+	public boolean estaVacia() {
+		if (this.pieza == null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * Mï¿½todo que obtiene la fila.
+	 * 
+	 * @return fila.
+	 */
+	public int obtenerFila() {
+		return this.fila;
+	}
+
+	/**
+	 * Mï¿½todo que obtiene la columna.
+	 * 
+	 * @return columna.
+	 */
+	public int obtenerColumna() {
+		return this.columna;
+	}
+
+	/**
+	 * Mï¿½todo que nos indica si estï¿½ vacï¿½a la celda o no.
+	 */
+	public String toString() {
+		if (estaVacia()) {
+			return "-";
+		} else {
+			return obtenerPieza().toString();
+		}
 	}
 }
