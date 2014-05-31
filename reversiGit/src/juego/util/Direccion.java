@@ -59,7 +59,7 @@ public enum Direccion {
 	}
 
 	/**
-	 * Método que obtiene el desplazamiento de la columna.
+	 * Método que obtiene el desplazamiento de la columna .
 	 * 
 	 * @return desplazamiento de la columna.
 	 */
