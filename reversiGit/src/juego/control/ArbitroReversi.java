@@ -4,7 +4,7 @@
 package juego.control;
 
 /**
- * Listado de clases que hemos importado de otro paquete y que vamos a necesitar.
+ * Listado de clases que hemos importado de otro paquete y que vamos a necesitar
  */
 import juego.modelo.Celda;
 import juego.modelo.Color;
