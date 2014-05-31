@@ -11,6 +11,7 @@ import juego.modelo.Pieza;
  * 
  * @author Carolina Colina Zamorano.
  * @author SteBnoOni - Rubén Blanco Alcántara (revision)
+ * @author angelillo
  * @since 1.0
  * @version Final
  * 
