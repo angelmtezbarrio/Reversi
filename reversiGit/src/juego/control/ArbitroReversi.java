@@ -182,9 +182,9 @@ public class ArbitroReversi {
 	 * salta el turno.
 	 * 
 	 * @param x
-	 *            coordenada de la fila donde se va a colocar la pieza.
+	 *            coordenada de la fila donde esta la posicion de la pieza.
 	 * @param y
-	 *            coordenada de la columna donde se va a colocar la pieza.
+	 *            coordenada de la columna donde esta la posicion de la pieza.
 	 */
 
 	public void jugar(int x, int y) {
