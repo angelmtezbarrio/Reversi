@@ -14,7 +14,7 @@ import juego.util.Direccion;
  * Nombre de la clase pública: Tablero.
  * 
  * @author Carolina Colina Zamorano.
- * @since 1.0
+ * @since Final
  * 
  */
 public class Tablero {

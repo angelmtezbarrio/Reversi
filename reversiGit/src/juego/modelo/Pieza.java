@@ -10,7 +10,7 @@ import juego.modelo.Color;
  * Nombre de la clase pública. Pieza.
  * 
  * @author Carolina Colina Zamorano.
- * @since 1.0
+ * @since Final
  * 
  */
 public class Pieza {
