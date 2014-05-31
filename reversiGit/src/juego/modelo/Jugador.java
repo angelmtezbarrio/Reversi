@@ -1,16 +1,17 @@
 /**
  * Paquete modelo.
  */
-package modelo;
+package juego.modelo;
 
-import modelo.Color;
-import modelo.Pieza;
+import juego.modelo.Color;
+import juego.modelo.Pieza;
 
 /**
  * Nombre de la clase p�blica: Jugador.
  * 
  * @author Carolina Colina Zamorano.
  * @author SteBnoOni - Rubén Blanco Alcántara (revision)
+ * @author angelillo
  * @since 1.0
  * @version Final
  * 

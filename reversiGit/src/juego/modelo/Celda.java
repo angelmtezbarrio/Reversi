@@ -1,15 +1,16 @@
 /**
  * Paquete modelo
  */
-package modelo;
+package juego.modelo;
 
-import modelo.Pieza;
+import juego.modelo.Pieza;
 
 /**
  * Clase p�blica: Celda.
  * 
  * @author Carolina Colina Colina Zamorano.
  * @author SteBnoOni - Rubén Blanco Alcántara (revision)
+ * @author angelillo
  * @since 1.0
  * @version Final
  * 
