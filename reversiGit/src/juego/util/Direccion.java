@@ -58,4 +58,13 @@ public enum Direccion {
 	public int obtenerDesplazamientoFila() {
 		return desplazamientoFila;
 	}
+	
+	/**
+	 * Método que obtiene el desplazamiento de la columna.
+	 * 
+	 * @return desplazamiento de la columna.
+	 */
+	public int obtenerDesplazamientoColumna() {
+		return desplazamientoColumna;
+	}
 }
