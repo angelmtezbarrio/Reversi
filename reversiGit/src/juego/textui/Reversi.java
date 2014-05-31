@@ -6,7 +6,6 @@ package juego.textui;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
 import juego.control.ArbitroReversi;
 import juego.modelo.Jugador;
 import juego.modelo.Tablero;
@@ -15,13 +14,14 @@ import juego.modelo.Tablero;
  * Clase principal del modo textui.
  * 
  * @author Carolina Colina Zamorano.
+ * @author SteBnoOni - RubÃ©n Blanco AlcÃ¡ntara (revision)
  * @since 1.0
- * @version 1.0
+ * @version Final
  */
 public class Reversi {
 
 	/**
-	 * Árbitro encargado de gestionar el juego.
+	 * ï¿½rbitro encargado de gestionar el juego.
 	 */
 	private static ArbitroReversi arbitro;
 
@@ -48,7 +48,7 @@ public class Reversi {
 		/**
 		 * Atributo jugador2 de tipo string.
 		 */
-		String jugador2 = "Caín";
+		String jugador2 = "CaÃ­n";
 
 		// Si he ejecutado el reversi con atributos y son 4
 		if (args.length == 4) {
@@ -57,7 +57,7 @@ public class Reversi {
 			filas = Integer.parseInt(args[2]);
 			columnas = Integer.parseInt(args[3]);
 
-			// Que las filas y las columnas sean más de 4 y siempre pares, sino
+			// Que las filas y las columnas sean mï¿½s de 4 y siempre pares, sino
 			// finaliza el reversi
 			if (filas <= 4 || columnas <= 4 || (filas % 2 != 0)
 					|| (columnas % 2 != 0)) {
@@ -72,8 +72,8 @@ public class Reversi {
 			System.exit(0);
 		}
 
-		// Creo una variable árbitro para acceder a los métodos de
-		// ÁrbitroReversi
+		// Creo una variable ï¿½rbitro para acceder a los mï¿½todos de
+		// ï¿½rbitroReversi
 		arbitro = new ArbitroReversi(new Tablero(filas, columnas));
 		arbitro.registrarJugador(jugador1);
 		arbitro.registrarJugador(jugador2);
@@ -98,43 +98,43 @@ public class Reversi {
 				}
 			}
 
-			// Llamada al método jugar
+			// Llamada al mï¿½todo jugar
 			arbitro.jugar(i, j);
 
-			// Muestra el tablero después de la jugada
+			// Muestra el tablero despuï¿½s de la jugada
 			mostrarTablero();
 		}
 
-		// Llamada al método mostrar ganador cuando salga del while, que
+		// Llamada al mï¿½todo mostrar ganador cuando salga del while, que
 		// significa que la partida ha acabado
 		mostrarGanador(arbitro.consultarGanador());
 	}
-	
+
 	/**
-	 * Método que muestra un mensaje en pantalla en caso de que el número de
+	 * Mï¿½todo que muestra un mensaje en pantalla en caso de que el nï¿½mero de
 	 * filas y columnas introducido no coincida con lo establecido en las
-	 * indicaciones de la práctica.
+	 * indicaciones de la prï¿½ctica.
 	 */
 	private static void mostrarMensajeAyudaTablero() {
 		System.out
-				.println("El número de Filas y Columnas del tablero debe ser superior o igual a 4 y debe ser un número par.");
+				.println("El nï¿½mero de Filas y Columnas del tablero debe ser superior o igual a 4 y debe ser un nï¿½mero par.");
 	}
 
 	/**
-	 * Método que muestra un mensaje en pantalla en caso de que el número de
-	 * argumentos introducidos no sea correcto, indicando cómo debe ser la
+	 * Mï¿½todo que muestra un mensaje en pantalla en caso de que el nï¿½mero de
+	 * argumentos introducidos no sea correcto, indicando cï¿½mo debe ser la
 	 * entrada de argumentos.
 	 */
 	private static void mostrarMensajeAyudaArgumentos() {
 		System.out
-				.println("El número de argumentos introducido no es correcto.");
+				.println("El nï¿½mero de argumentos introducido no es correcto.");
 		System.out
-				.println("Debes introducir dos nombres de jugadores y dos números: filas y columnas.");
+				.println("Debes introducir dos nombres de jugadores y dos nï¿½meros: filas y columnas.");
 	}
 
 	/**
-	 * Método que muestra un mensaje en pantalla que nos indica que el
-	 * movimiento a realizar no está permitido por no cambiar ninguna ficha de
+	 * Mï¿½todo que muestra un mensaje en pantalla que nos indica que el
+	 * movimiento a realizar no estï¿½ permitido por no cambiar ninguna ficha de
 	 * color.
 	 */
 	private static void mostrarMensajeCoordenadas() {
@@ -143,15 +143,15 @@ public class Reversi {
 	}
 
 	/**
-	 * Método que muestra el tablero.
+	 * Mï¿½todo que muestra el tablero.
 	 */
 	private static void mostrarTablero() {
 		for (int i = 0; i < arbitro.consultarTablero().obtenerNumeroFilas(); i++) {
 
-			// Muestro el número de filas en la parte izquierda del tablero
+			// Muestro el nï¿½mero de filas en la parte izquierda del tablero
 			System.out.print(i + "\t");
 
-			// Muestra el contenido de las celdas bien estén vacías ('-') o bien
+			// Muestra el contenido de las celdas bien estï¿½n vacï¿½as ('-') o bien
 			// tengan pieza ('X', 'O')
 			for (int j = 0; j < arbitro.consultarTablero()
 					.obtenerNumeroColumnas(); j++) {
@@ -163,17 +163,16 @@ public class Reversi {
 		System.out.println("");
 		System.out.print("\t");
 
-		// Muestra el número de columnas en la parte inferior del tablero
+		// Muestra el nï¿½mero de columnas en la parte inferior del tablero
 		for (int k = 0; k < arbitro.consultarTablero().obtenerNumeroColumnas(); k++) {
 			System.out.print(k);
 		}
 
 		System.out.println("");
 	}
-	
+
 	/**
-	 * @author angelillo
-	 * Método que dice a qué jugador le toca mover, mostrando su nombre, y el
+	 * Mï¿½todo que dice a quï¿½ jugador le toca mover, mostrando su nombre, y el
 	 * color de sus fichas.
 	 */
 	private static void mostrarTurno() {
@@ -184,9 +183,9 @@ public class Reversi {
 	}
 
 	/**
-	 * Método que mustra un mensaje en pantalla pidiendo la fila y guardando su
-	 * valor convirtiéndolo a entero.
-	 * @author angelillo
+	 * Mï¿½todo que mustra un mensaje en pantalla pidiendo la fila y guardando su
+	 * valor convirtiï¿½ndolo a entero.
+	 * 
 	 * @return coordenada fila del tablero.
 	 */
 	private static int pedirFila() {
@@ -208,5 +207,52 @@ public class Reversi {
 
 		return fila;
 
+	}
+
+	/**
+	 * Mï¿½todo que mustra un mensaje en pantalla pidiendo la columna y guardando
+	 * su valor convirtiï¿½ndolo a entero.
+	 * 
+	 * @return coordenada columna del tablero.
+	 */
+	private static int pedirColumna() {
+		String cadenaColumna = "";
+		int columna = 0;
+		System.out.print("Introduce Columna: ");
+
+		// Leo del teclado la columna
+		InputStreamReader in = new InputStreamReader(System.in);
+		BufferedReader teclado = new BufferedReader(in);
+
+		try {
+			cadenaColumna = teclado.readLine();
+			columna = Integer.parseInt(cadenaColumna);
+		} catch (IOException e) {
+		}
+
+		return columna;
+	}
+
+	/**
+	 * Mï¿½todo que muestra el resultado cuando ha acabado el juego. Mostrando un
+	 * mensaje, bien si han quedado en tablas, o bien si ha habido un ganador,
+	 * en este caso muestra el nombre y el color de las fichas que le
+	 * corresponde al jugador vencedor.
+	 * 
+	 * @param jugador
+	 *            jugador que mayor nï¿½mero de piezas ha conseguido poner en el
+	 *            tablero.
+	 */
+	private static void mostrarGanador(Jugador jugador) {
+		if (jugador == null) {
+			System.out.println("RESULTADO FINAL:");
+			System.out
+					.println("TABLAS. Los dos jugadores tienen el mismo nï¿½mero de piezas");
+		} else {
+			System.out.println("RESULTADO FINAL:");
+			System.out.println("GANADOR: " + jugador.consultarNombre()
+					+ " con las fichas de color " + jugador.obtenerColor()
+					+ "(" + jugador.obtenerColor().toChar() + ")");
+		}
 	}
 }
